@@ -9,7 +9,12 @@
 
 body {
   background-color: darkgrey;
+  font-family: 'Montserrat', sans-serif;
 }
+
+/*pre {
+  font-family: 'Montserrat', sans-serif;
+}*/
 
 /* ------------- */
 /* Navbar Styles */
@@ -29,9 +34,13 @@ nav {
 
 #nav a {
   color: snow;
-  font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   text-decoration: none;
+}
+
+#nav a:hover{
+  color: #c9fcf2;
+  /*border-bottom: 5px solid purple;*/
 }
 
 .nav-group a {
@@ -60,20 +69,41 @@ nav {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-
-h1 {
-  font-size: 45px;
-  color: snow;
-  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, black, darkgrey);
 }
 
 #herotext {
   flex: 1;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: -2.5%;
+  padding: 40px;
+  text-align: center;
+  color: snow;
+}
+
+#herotext h1 {
+  font-size: 60px;
+  padding: 50px 0;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+#herotext h2 {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 700px) {
+  #herotext h1 {
+    font-size: 40px;
+  }
+
+  #herotext h2 {
+    font-size: 18px;
+  }
 }
 
 /* ------------------- */
