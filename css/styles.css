@@ -1,3 +1,7 @@
+/* ------------- */
+/* Global Styles */
+/* ------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +11,75 @@ body {
   background-color: darkgrey;
 }
 
+/* ------------- */
 /* Navbar Styles */
+/* ------------- */
+
 nav {
-  /*display: flex;*/
-  justify-content: space-around;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }
 
-nav a {
+#nav {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav a {
+  color: snow;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
   text-decoration: none;
 }
 
+.nav-group a {
+  padding: 10px 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  #nav {
+   width: 90%;
+  }
+
+  #nav a {
+   font-size: 18px;
+  }
+
+  .nav-group a {
+  padding: 5px 10px;
+  }
+}
+
+/* ----------------- */
 /* Hero Image Styles */
+/* ----------------- */
+
 #hero {
-  height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 45px;
+  color: snow;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#herotext {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -2.5%;
 }
 
-/* Hero Image Styles */
+/* ------------------- */
+/* Project Grid Styles */
+/* ------------------- */
+
 #projects {
   display: flex;
   justify-content: center;
@@ -43,7 +97,7 @@ nav a {
 
 @media only screen and (max-width: 1400px) {
   .box {
-    width: calc(98.75%/2);
+    width: calc(98.5%/2);
   }
 }
 
