@@ -1,9 +1,15 @@
-body {
-  background-color: darkgrey
+* {
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background-color: darkgrey;
+}
+
+/* Navbar Styles */
 nav {
-  display: flex;
+  /*display: flex;*/
   justify-content: space-around;
 }
 
@@ -11,12 +17,7 @@ nav a {
   text-decoration: none;
 }
 
-img {
-  margin: 5px;
-  max-width: 50%;
-  max-height: 50%;
-}
-
+/* Hero Image Styles */
 #hero {
   height: 100vh;
   display: flex;
@@ -24,7 +25,35 @@ img {
   align-items: center;
 }
 
+/* Hero Image Styles */
 #projects {
   display: flex;
-  /*flex-wrap: wrap;*/
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+#projects img {
+  width: 100%;
+}
+
+.box {
+  margin: 0px 2.5px;
+  width: calc(98.5%/4);
+}
+
+@media only screen and (max-width: 1400px) {
+  .box {
+    width: calc(98.75%/2);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .box {
+    width: calc(99%);
+  }
+}
+
+
+
+
+
