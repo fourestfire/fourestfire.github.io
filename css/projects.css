@@ -1,0 +1,9 @@
+#projectinfo {
+  display: flex;
+  /*justify-content: center;*/
+  /*flex-wrap: wrap;*/
+}
+
+.projectdetails {
+  padding: 5px;
+}
