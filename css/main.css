@@ -10,6 +10,7 @@
 body {
   background-color: darkgrey;
   font-family: 'Montserrat', sans-serif;
+  line-height: 1.7em;
 }
 
 /* ------------- */
@@ -80,7 +81,6 @@ nav {
   text-align: center;
   color: snow;
 }
-
 #herotext h1 {
   font-size: 60px;
   padding: 50px 0;
@@ -120,6 +120,7 @@ nav {
 .box {
   margin: 0px 2.5px;
   width: calc(98.5%/4);
+  text-align: center;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -132,6 +133,12 @@ nav {
   .box {
     width: calc(99%);
   }
+}
+
+.box img:hover {
+  opacity: 0.6;
+  transition: all .1s ease-in-out;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
 /* ------------- */
