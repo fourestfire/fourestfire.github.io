@@ -73,6 +73,48 @@
       © dean guo 2017
     </footer>
 
+    <script src="js/three.js"></script>
+  <script>
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 ); // field of view, aspect ratio, near and far clipping panes
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    var geometry = new THREE.BoxGeometry( 2, 2, 1 ); // x, y, z
+    var material = new THREE.MeshLambertMaterial ( { color: 'pink' } );
+    var cube = new THREE.Mesh( geometry, material );
+    var cube2 = new THREE.Mesh( geometry, material )
+    cube2.position.y = 9
+    cube.position.y = -2
+    scene.add( cube );
+
+    camera.position.z = 9; // move camera away from origin so they're not on top of each other
+
+    // create a point light
+    const pointLight =
+      new THREE.PointLight('white', 1); // color, intensity, distance, decay
+
+    // set its position
+    pointLight.position.x = 10;
+    pointLight.position.y = 50;
+    pointLight.position.z = 130;
+
+    // add to the scene
+    scene.add(pointLight);
+
+    var render = function () {
+      requestAnimationFrame( render );
+
+      // cube.rotation.x += 0.025;
+      cube.rotation.y += 0.015;
+      renderer.setClearColor( 'darkgrey', 1.0 );
+      renderer.render(scene, camera);
+    };
+
+    render();
+  </script>
 </body>
 
 </html>

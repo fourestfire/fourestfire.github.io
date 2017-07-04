@@ -67,7 +67,7 @@ nav {
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(to bottom, black, darkgrey);
+  background: linear-gradient(to bottom, black, transparent);
 }
 
 #herotext {
@@ -127,3 +127,16 @@ footer {
   font-size: 14px;
 }
 
+/* ------------------- */
+/* ThreeJS Cube Styles */
+/* ------------------- */
+
+canvas {
+	width: auto;
+	height: 100vh;
+	display: block;
+	position: fixed;
+	top: -10%;
+	/*left: -40%;*/
+	z-index: -9999;
+}
