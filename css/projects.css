@@ -1,14 +1,18 @@
-#projectinfo {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*flex-wrap: wrap;*/
+nav {
+  background-color: black;
+}
+
+#projectheader {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projectdetails {
   padding: 10px;
 }
 
-.row {
-
-
+#hero {
+  min-height: 80vh;
 }

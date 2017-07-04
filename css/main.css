@@ -107,7 +107,7 @@ nav {
 /* Project Grid Styles */
 /* ------------------- */
 
-.row .col-sm-12 {
+#projects .col-sm-12 {
   padding: 0;
 }
 
