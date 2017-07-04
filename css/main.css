@@ -107,35 +107,11 @@ nav {
 /* Project Grid Styles */
 /* ------------------- */
 
-#projects {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.row .col-sm-12 {
+  padding: 0;
 }
 
-#projects img {
-  width: 100%;
-}
-
-.box {
-  margin: 0px 2.5px;
-  width: calc(98.5%/4);
-  text-align: center;
-}
-
-@media only screen and (max-width: 1400px) {
-  .box {
-    width: calc(98.5%/2);
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .box {
-    width: calc(99%);
-  }
-}
-
-.box img:hover {
+a img:hover {
   opacity: 0.6;
   transition: all .1s ease-in-out;
   filter: alpha(opacity=50); /* For IE8 and earlier */
