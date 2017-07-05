@@ -3,8 +3,9 @@
   margin: 10px 10px;
   font-size: 18px;
   line-height: 1.3333333;
-  border: 1px solid #42dca3;
-  color: #42dca3;
+  border: 1px solid white;
+  background-color: grey;
+  color: white;
   text-decoration: none;
   width: 180px;
   transition: all .1s ease-in-out
@@ -12,10 +13,10 @@
 
 #herotext a:hover,
 #herotext a:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid #9efff3;
     outline: 0;
     color: grey;
-    background-color: #42dca3;
+    background-color: #9efff3;
 }
 
 .flex {
