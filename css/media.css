@@ -5,8 +5,20 @@
   align-items: center;
 }
 
-.color {
-  background-color: aliceblue;
+body {
+  background-color: transparent;
+}
+
+#fawm {
+  background-color: lavender;
+}
+
+#techtalk {
+   background-color: lightcyan;
+}
+
+.section {
+   margin-bottom: 15px;
 }
 
 h1 {
