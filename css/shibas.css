@@ -1,0 +1,17 @@
+h1 {
+  margin: 70px;
+  color: white;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes h1 {
+  50% { opacity: 0; }
+}
+
+img {
+  margin-left: 70px;
+}
+
+body {
+  background-color: grey;
+}
