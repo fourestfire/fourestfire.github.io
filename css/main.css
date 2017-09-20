@@ -13,6 +13,10 @@ body {
   line-height: 1.7em;
 }
 
+p {
+  margin-bottom: 15px;
+}
+
 /* ------------- */
 /* Navbar Styles */
 /* ------------- */
