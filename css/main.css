@@ -150,11 +150,11 @@ a img:hover {
   /* width: auto; */
 }
 
-.projects img {
+/* .projects img {
     height: 100%;
     width: auto;
     object-fit: contain;
-}
+} */
 
 .overlay {
   font-family: 'Crimson Text', serif;
