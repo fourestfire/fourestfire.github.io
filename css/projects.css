@@ -1,5 +1,6 @@
 nav {
-  background-color: black;
+  padding: 20px 0;
+  background: linear-gradient(to left,#4B543B, rgba(0, 22, 34, 1));
 }
 
 body {
@@ -8,12 +9,15 @@ body {
 
 h1 {
   margin-top: 0;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 0.9em;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 25px;
+  padding-bottom: 7px;
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
 }
 
 .projectcontext p {
@@ -25,6 +29,27 @@ ul {
   font-size: 16px;
   list-style-position: inside;
 }
+
+ol {
+  font-size: 16px;
+  list-style-position: inside;
+}
+
+ol {
+  counter-reset: list-counter;
+  list-style-type: none;
+}
+
+ol li {
+  counter-increment: list-counter;
+  margin-bottom: 15px;
+}
+
+ol li::before { /* ordered list config */
+  content: counter(list-counter) ") ";
+  font-weight: 500;
+}
+
 
 @media only screen and (max-width: 992px) {
   .col-sm-12, .col-md-6 {
@@ -66,6 +91,10 @@ html,body {
     height:100%;
 }
 
+.img-round {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
 .module {
   margin: 10px;
