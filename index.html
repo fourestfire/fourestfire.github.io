@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Product Manager; Berkeley MBA, Cornell, and Fullstack Academy alum. Previously @ PwC Advisory and Cisco. Now at Huntress.">
+    content="Dean Guo's personal site for current projects, notes, and older work.">
   <meta name="author" content="Dean Guo">
 
   <title>Dean Guo</title>
@@ -36,171 +36,174 @@
   <!-- FA Icons -->
   <script src="https://use.fontawesome.com/665f8d3210.js"></script>
 
-
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/musicbars.ico" type="image/x-icon" />
 </head>
 
 <body>
-  <section id="hero">
-    <nav>
-      <div id="nav">
-        <a href="/">
-          <i class="fa fa-tree" aria-hidden="true"></i>
-          <i class="fa fa-heart" aria-hidden="true"></i>
-        </a>
+  <div class="site-shell">
+    <section id="hero" class="home-hero">
+      <nav aria-label="Main navigation">
+        <div id="nav">
+          <a class="brand-link" href="./index.html" aria-label="Dean Guo home">
+            <i class="fa fa-tree" aria-hidden="true"></i>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </a>
 
-        <div class="nav-group">
-          <!-- <a href="#projects">Projects</a> -->
-          <!-- <a href="./media.html">Media</a> -->
-          <a href="./contact.html">contact me</a>
+          <div class="nav-group">
+            <a href="./blog.html">notes</a>
+            <a href="./archive.html">older work</a>
+            <a href="./contact.html">contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <div id="herotext" class="hero-copy">
+        <p class="kicker">deanguo.com</p>
+        <h1 class="wip-sign">WIP</h1>
+        <p class="hero-support">Work in progress. Notes and current projects coming soon.</p>
+        <div class="hero-links" aria-label="Primary links">
+          <a href="./blog.html">notes</a>
+          <a href="./contact.html">contact</a>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <div id="herotext">
-      <div>
-        <h1 style="font-family: 
-          'Crimson Text', serif;"> Hi, I'm Dean. </h1>
-        <p>I aim to build things that are simple and delightful to use.</p>
-        <p>My <a href="./podgpt.html">latest side project</a> explores GenAI.</p>
-      </div>
-    </div>
+    <main>
+      <section id="projects" class="home-section project-strip">
+        <div class="section-header">
+          <p class="kicker">Older projects</p>
+          <h2>Keeping the old stuff visible for now.</h2>
+        </div>
 
-  </section>
+        <div class="project-grid">
+          <a class="project-card" href="./podgpt.html">
+            <img src="./img/PodGPT.png" alt="PodGPT project screenshot">
+            <span>PodGPT</span>
+          </a>
 
-  <section id="projects" class="row">
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./podgpt.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>(Latest) PodGPT &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./kit.html"><img src="./img/kit.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Keep in Touch &ndash; React Native App </h2>
-      </div>
-    </div>
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./agentportal.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Agent Portal</h2>
-      </div>
-    </div> -->
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./entwine.html"><img src="./img/entwinehome_macbook.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Entwine &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./artshopper.html"><img src="./img/artshopper_thumb.jpg" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Art Shopper</h2>
-      </div>
-    </div> -->
-  </section>
+          <a class="project-card" href="./kit.html">
+            <img src="./img/kit.png" alt="Keep in Touch project screenshot">
+            <span>Keep in Touch</span>
+          </a>
+        </div>
+
+        <p class="archive-cta"><a class="inline-link" href="./archive.html">more older work</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="./contact.html">Contact</a>
+      <span>Updated 2026</span>
+    </footer>
   </div>
-</div>
-
-
 
   <script src="js/three.js"></script>
   <script>
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // field of view, aspect ratio, near and far clipping panes
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.domElement.className = 'three-canvas';
+    renderer.domElement.setAttribute('aria-hidden', 'true');
     document.body.appendChild(renderer.domElement);
 
-    // Create a gradient texture for our box
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
     canvas.width = 256;
     canvas.height = 256;
-    var gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'aqua');
-    gradient.addColorStop(1, 'blue');
 
-    // Draw the gradient on the canvas
+    var gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#79fff2');
+    gradient.addColorStop(0.52, '#6ba5ff');
+    gradient.addColorStop(1, '#ffb86b');
+
     context.fillStyle = gradient;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Create a texture from the canvas
     var texture = new THREE.CanvasTexture(canvas);
-
-    // Create a material using the texture
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    var geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // x, y, z
+    var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 0.82, transparent: true });
+    var geometry = new THREE.BoxGeometry(1.7, 1.7, 1.7);
 
     var cube = new THREE.Mesh(geometry, material);
-    cube.position.y = -2
     scene.add(cube);
 
-    camera.position.z = 9;
+    camera.position.z = 8;
 
-    function getMousePos(event) {
+    function setCubeForViewport() {
+      if (window.innerWidth < 700) {
+        cube.position.set(1.45, 2.35, 0);
+        cube.scale.set(0.78, 0.78, 0.78);
+        return;
+      }
+
+      cube.position.set(5.5, -0.8, 0);
+      cube.scale.set(1, 1, 1);
+    }
+
+    setCubeForViewport();
+
+    function getPointer(event) {
+      if (event.touches && event.touches.length > 0) {
+        return event.touches[0];
+      }
+
+      return event;
+    }
+
+    function getPointerPos(event) {
+      var pointer = getPointer(event);
       var rect = renderer.domElement.getBoundingClientRect();
+
       return {
-        x: ((event.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1,
-        y: -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1
+        x: ((pointer.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1,
+        y: -((pointer.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1
       };
     }
 
     function updateCubePosition(event) {
-      event.preventDefault();
-      var mousePos = getMousePos(event);
-      var vector = new THREE.Vector3(mousePos.x, mousePos.y, 0.5);
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+
+      var pointerPos = getPointerPos(event);
+      var vector = new THREE.Vector3(pointerPos.x, pointerPos.y, 0.5);
       vector.unproject(camera);
+
       var dir = vector.sub(camera.position).normalize();
       var distance = -camera.position.z / dir.z;
       var pos = camera.position.clone().add(dir.multiplyScalar(distance));
-      pos.multiplyScalar(0.8);
+
+      pos.multiplyScalar(0.75);
       cube.position.copy(pos).negate();
 
-      // Calculate scale factor based on mouse position: further away = bigger cube
-      var scaleFactor = 1 + (Math.abs(mousePos.x) + Math.abs(mousePos.y)) * 0.3;
-
-      // Update cube scale
+      var scaleFactor = 1 + (Math.abs(pointerPos.x) + Math.abs(pointerPos.y)) * 0.28;
       cube.scale.set(scaleFactor, scaleFactor, scaleFactor);
-      
+    }
+
+    function resizeRenderer() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      setCubeForViewport();
     }
 
     window.addEventListener('mousemove', updateCubePosition, false);
-    window.addEventListener('touchmove', updateCubePosition, false);
+    window.addEventListener('touchmove', updateCubePosition, { passive: false });
+    window.addEventListener('resize', resizeRenderer, false);
 
-    function animate() {
-      requestAnimationFrame(animate);
+    function render() {
+      requestAnimationFrame(render);
+      cube.rotation.x += 0.003;
+      cube.rotation.y += 0.012;
+      cube.rotation.z += 0.001;
+      renderer.setClearColor(0x101316, 0);
       renderer.render(scene, camera);
     }
 
-    animate();
-
-    // create a point light
-    const pointLight =
-      new THREE.PointLight('white', 1); // color, intensity, distance, decay
-
-    // set position and add to scene
-    pointLight.position.x = 10;
-    pointLight.position.y = 50;
-    pointLight.position.z = 130;
-    scene.add(pointLight);
-
-    var render = function () {
-      requestAnimationFrame(render);
-      cube.rotation.x += 0.0010;
-      cube.rotation.y += 0.015;
-      cube.rotation.z += 0.0005;
-      renderer.setClearColor('darkgrey', 1.0);
-      renderer.render(scene, camera);
-    };
-
-
     render();
-
   </script>
 </body>
 
