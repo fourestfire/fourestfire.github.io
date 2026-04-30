@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Product Manager; Berkeley MBA, Cornell, and Fullstack Academy alum. Previously @ PwC Advisory and Cisco. Now at Huntress.">
+  <meta name="description" content="Dean Guo — site is being rebuilt.">
   <meta name="author" content="Dean Guo">
 
   <title>Dean Guo</title>
@@ -17,190 +16,299 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-73120949-1');
   </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap (Only Grid) -->
-  <link href="css/bootstrap-mingrid.css" rel="stylesheet">
-
-  <!-- Main CSS -->
-  <link href="css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Raleway:wght@400;600;800;900&display=swap" rel="stylesheet">
 
   <!-- FA Icons -->
   <script src="https://use.fontawesome.com/665f8d3210.js"></script>
 
-
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/musicbars.ico" type="image/x-icon" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #101316;
+      color: #f8f7f1;
+      font-family: 'Raleway', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 28px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    nav a.brand {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      color: #f8f7f1;
+      text-decoration: none;
+    }
+    nav a.brand i { font-size: 18px; }
+    nav a.brand:hover { color: #9af8e9; }
+    nav .right a {
+      color: #f8f7f1;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 18px;
+    }
+    nav .right a:hover { color: #9af8e9; }
+
+    main {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 60px 28px 80px;
+    }
+
+    .kicker {
+      color: #9af8e9;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .wip-sign {
+      display: inline-block;
+      border-top: 3px solid rgba(248, 247, 241, 0.86);
+      border-bottom: 3px solid rgba(248, 247, 241, 0.86);
+      padding: 14px 0 16px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: clamp(72px, 14vw, 168px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .tagline {
+      max-width: 520px;
+      color: #d9dfd7;
+      font-size: 18px;
+      margin-bottom: 56px;
+    }
+
+    .placeholder-list {
+      list-style: none;
+      max-width: 560px;
+      border-top: 1px solid rgba(248, 247, 241, 0.14);
+    }
+    .placeholder-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 18px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(248, 247, 241, 0.14);
+    }
+    .placeholder-list .key {
+      font-family: 'Crimson Text', serif;
+      font-size: 22px;
+    }
+    .placeholder-list .desc {
+      color: #9aa1a3;
+      font-size: 14px;
+    }
+    .placeholder-list .tag {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8a908b;
+    }
+    .placeholder-list a {
+      color: inherit; text-decoration: none;
+      display: contents;
+    }
+    .placeholder-list a:hover .key { color: #9af8e9; }
+    .placeholder-list a:hover .tag { color: #9af8e9; }
+    .placeholder-list .tag.live { color: #9af8e9; }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 28px 36px;
+      color: #6a706c;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    footer a { color: #d9dfd7; text-decoration: none; }
+    footer a:hover { color: #9af8e9; }
+
+    .three-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 20px; }
+      main { padding: 40px 20px 60px; }
+      .wip-sign { font-size: clamp(60px, 18vw, 108px); }
+      .placeholder-list li {
+        grid-template-columns: 1fr auto;
+      }
+      .placeholder-list .desc { grid-column: 1 / -1; order: 3; }
+    }
+  </style>
 </head>
 
 <body>
-  <section id="hero">
-    <nav>
-      <div id="nav">
-        <a href="/">
-          <i class="fa fa-tree" aria-hidden="true"></i>
-          <i class="fa fa-heart" aria-hidden="true"></i>
+  <nav aria-label="Main navigation">
+    <a href="./index.html" class="brand" aria-label="Dean Guo home">
+      <i class="fa fa-tree" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </a>
+    <div class="right">
+      <a href="./archive.html">older work</a>
+      <a href="./contact.html">contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <p class="kicker">deanguo.com</p>
+    <h1 class="wip-sign">WIP</h1>
+    <p class="tagline">Rebuilding. New homepage, now page, and project notes coming soon.</p>
+
+    <ul class="placeholder-list" aria-label="Sections">
+      <li>
+        <span class="key">now</span>
+        <span class="desc">what I'm focused on this week</span>
+        <span class="tag">tbd</span>
+      </li>
+      <li>
+        <span class="key">projects</span>
+        <span class="desc">current builds, written up properly</span>
+        <span class="tag">tbd</span>
+      </li>
+      <li>
+        <span class="key">notes</span>
+        <span class="desc">build logs &amp; product thinking</span>
+        <span class="tag">tbd</span>
+      </li>
+      <li>
+        <a href="./archive.html">
+          <span class="key">older work</span>
+          <span class="desc">past project pages, kept for context</span>
+          <span class="tag live">live →</span>
         </a>
+      </li>
+    </ul>
+  </main>
 
-        <div class="nav-group">
-          <!-- <a href="#projects">Projects</a> -->
-          <!-- <a href="./media.html">Media</a> -->
-          <a href="./contact.html">contact me</a>
-        </div>
-      </div>
-    </nav>
-
-    <div id="herotext">
-      <div>
-        <h1 style="font-family: 
-          'Crimson Text', serif;"> Hi, I'm Dean. </h1>
-        <p>I aim to build things that are simple and delightful to use.</p>
-        <p>My <a href="./podgpt.html">latest side project</a> explores GenAI.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <section id="projects" class="row">
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./podgpt.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>(Latest) PodGPT &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./kit.html"><img src="./img/kit.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Keep in Touch &ndash; React Native App </h2>
-      </div>
-    </div>
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./agentportal.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Agent Portal</h2>
-      </div>
-    </div> -->
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./entwine.html"><img src="./img/entwinehome_macbook.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Entwine &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./artshopper.html"><img src="./img/artshopper_thumb.jpg" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Art Shopper</h2>
-      </div>
-    </div> -->
-  </section>
-  </div>
-</div>
-
-
+  <footer>
+    <span>back soon</span>
+    <a href="./contact.html">contact</a>
+  </footer>
 
   <script src="js/three.js"></script>
   <script>
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // field of view, aspect ratio, near and far clipping panes
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.domElement.className = 'three-canvas';
+    renderer.domElement.setAttribute('aria-hidden', 'true');
     document.body.appendChild(renderer.domElement);
 
-    // Create a gradient texture for our box
     var canvas = document.createElement('canvas');
-    var context = canvas.getContext('2d');
-    canvas.width = 256;
-    canvas.height = 256;
-    var gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'aqua');
-    gradient.addColorStop(1, 'blue');
+    canvas.width = 256; canvas.height = 256;
+    var ctx = canvas.getContext('2d');
+    var grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grad.addColorStop(0, '#79fff2');
+    grad.addColorStop(0.52, '#6ba5ff');
+    grad.addColorStop(1, '#ffb86b');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw the gradient on the canvas
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Create a texture from the canvas
     var texture = new THREE.CanvasTexture(canvas);
-
-    // Create a material using the texture
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    var geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // x, y, z
-
-    var cube = new THREE.Mesh(geometry, material);
-    cube.position.y = -2
+    var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 0.78, transparent: true });
+    var cube = new THREE.Mesh(new THREE.BoxGeometry(1.7, 1.7, 1.7), material);
     scene.add(cube);
+    camera.position.z = 8;
 
-    camera.position.z = 9;
+    function place() {
+      if (window.innerWidth < 700) {
+        cube.position.set(1.5, 2.4, 0);
+        cube.scale.setScalar(0.78);
+      } else {
+        cube.position.set(5.5, -0.8, 0);
+        cube.scale.setScalar(1);
+      }
+    }
+    place();
 
-    function getMousePos(event) {
-      var rect = renderer.domElement.getBoundingClientRect();
+    function pointerPos(e) {
+      var p = (e.touches && e.touches[0]) ? e.touches[0] : e;
+      var r = renderer.domElement.getBoundingClientRect();
       return {
-        x: ((event.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1,
-        y: -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1
+        x: ((p.clientX - r.left) / (r.right - r.left)) * 2 - 1,
+        y: -((p.clientY - r.top) / (r.bottom - r.top)) * 2 + 1
       };
     }
 
-    function updateCubePosition(event) {
-      event.preventDefault();
-      var mousePos = getMousePos(event);
-      var vector = new THREE.Vector3(mousePos.x, mousePos.y, 0.5);
-      vector.unproject(camera);
-      var dir = vector.sub(camera.position).normalize();
+    function move(e) {
+      if (e.cancelable) e.preventDefault();
+      var pp = pointerPos(e);
+      var v = new THREE.Vector3(pp.x, pp.y, 0.5);
+      v.unproject(camera);
+      var dir = v.sub(camera.position).normalize();
       var distance = -camera.position.z / dir.z;
       var pos = camera.position.clone().add(dir.multiplyScalar(distance));
-      pos.multiplyScalar(0.8);
+      pos.multiplyScalar(0.75);
       cube.position.copy(pos).negate();
-
-      // Calculate scale factor based on mouse position: further away = bigger cube
-      var scaleFactor = 1 + (Math.abs(mousePos.x) + Math.abs(mousePos.y)) * 0.3;
-
-      // Update cube scale
-      cube.scale.set(scaleFactor, scaleFactor, scaleFactor);
-      
+      var s = 1 + (Math.abs(pp.x) + Math.abs(pp.y)) * 0.28;
+      cube.scale.set(s, s, s);
     }
 
-    window.addEventListener('mousemove', updateCubePosition, false);
-    window.addEventListener('touchmove', updateCubePosition, false);
+    window.addEventListener('mousemove', move, false);
+    window.addEventListener('touchmove', move, { passive: false });
+    window.addEventListener('resize', function () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      place();
+    });
 
-    function animate() {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // create a point light
-    const pointLight =
-      new THREE.PointLight('white', 1); // color, intensity, distance, decay
-
-    // set position and add to scene
-    pointLight.position.x = 10;
-    pointLight.position.y = 50;
-    pointLight.position.z = 130;
-    scene.add(pointLight);
-
-    var render = function () {
+    function render() {
       requestAnimationFrame(render);
-      cube.rotation.x += 0.0010;
-      cube.rotation.y += 0.015;
-      cube.rotation.z += 0.0005;
-      renderer.setClearColor('darkgrey', 1.0);
+      cube.rotation.x += 0.003;
+      cube.rotation.y += 0.012;
+      cube.rotation.z += 0.001;
+      renderer.setClearColor(0x101316, 0);
       renderer.render(scene, camera);
-    };
-
-
+    }
     render();
-
   </script>
 </body>
 
