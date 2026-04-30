@@ -5,11 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Product Manager; Berkeley MBA, Cornell, and Fullstack Academy alum. Previously @ PwC Advisory and Cisco. Now at Huntress.">
+  <meta name="description" content="Dean Guo — site is being rebuilt.">
   <meta name="author" content="Dean Guo">
 
-  <title>Dean Guo</title>
+  <title>Dean Guo — under construction</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73120949-1"></script>
@@ -17,190 +16,304 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-73120949-1');
   </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap (Only Grid) -->
-  <link href="css/bootstrap-mingrid.css" rel="stylesheet">
-
-  <!-- Main CSS -->
-  <link href="css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Raleway:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- FA Icons -->
   <script src="https://use.fontawesome.com/665f8d3210.js"></script>
 
-
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/musicbars.ico" type="image/x-icon" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100vh; }
+    body {
+      background: #0f1113;
+      color: #f8f7f1;
+      font-family: 'Raleway', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* subtle hazard-tape accents — thin, low contrast, only at the edges */
+    .tape-top, .tape-bottom {
+      position: fixed; left: 0; right: 0; height: 6px;
+      background: repeating-linear-gradient(
+        135deg,
+        #f1c40f 0 18px,
+        #1a1a1a 18px 36px
+      );
+      opacity: 0.55;
+      z-index: 4;
+    }
+    .tape-top { top: 0; }
+    .tape-bottom { bottom: 0; }
+
+    .icon-home {
+      position: fixed; top: 22px; left: 26px; z-index: 5;
+      display: inline-flex; gap: 6px; align-items: center;
+      color: #f8f7f1; text-decoration: none;
+    }
+    .icon-home i { font-size: 18px; }
+    .icon-home:hover { color: #f1c40f; }
+
+    main {
+      position: relative; z-index: 2;
+      padding: 96px 24px 90px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .stamp {
+      display: inline-block;
+      padding: 18px 26px 22px;
+      border: 4px solid #f1c40f;
+      transform: rotate(-1.5deg);
+      margin-bottom: 28px;
+      background: rgba(15, 17, 19, 0.65);
+    }
+    .stamp .label {
+      color: #f1c40f;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .stamp h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: clamp(56px, 9vw, 116px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #f8f7f1;
+    }
+    .stamp h1 span { display: block; }
+
+    .lede {
+      max-width: 560px;
+      color: #c8cfcc;
+      font-size: 17px;
+      margin-bottom: 48px;
+    }
+    .lede code {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 14px;
+      color: #f1c40f;
+      background: rgba(241, 196, 15, 0.08);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    .manifest {
+      border-top: 1px solid rgba(241, 196, 15, 0.25);
+      padding-top: 28px;
+    }
+    .manifest h2 {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #8a908b;
+      margin-bottom: 18px;
+    }
+    .manifest ul { list-style: none; display: grid; gap: 2px; }
+    .manifest li {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(248, 247, 241, 0.12);
+      align-items: baseline;
+    }
+    .manifest .key {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 14px;
+      color: #f8f7f1;
+    }
+    .manifest .desc {
+      color: #8a908b;
+      font-size: 14px;
+    }
+    .manifest .status {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f1c40f;
+      border: 1px solid rgba(241, 196, 15, 0.4);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .manifest .status.live {
+      color: #9af8e9;
+      border-color: rgba(154, 248, 233, 0.5);
+    }
+    .manifest a {
+      color: inherit; text-decoration: none;
+      display: contents;
+    }
+    .manifest a:hover .key { color: #f1c40f; }
+    .manifest a:hover .status.live { color: #9af8e9; border-color: #9af8e9; }
+
+    .three-canvas {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      max-width: 1080px;
+      margin: 60px auto 0;
+      padding: 24px 24px 40px;
+      color: #6a706c;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 80px 20px 60px; }
+      .stamp h1 { font-size: clamp(48px, 14vw, 88px); }
+      .manifest li {
+        grid-template-columns: 1fr auto;
+      }
+      .manifest .desc {
+        grid-column: 1 / -1;
+        order: 3;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <section id="hero">
-    <nav>
-      <div id="nav">
-        <a href="/">
-          <i class="fa fa-tree" aria-hidden="true"></i>
-          <i class="fa fa-heart" aria-hidden="true"></i>
-        </a>
+  <div class="tape-top" aria-hidden="true"></div>
 
-        <div class="nav-group">
-          <!-- <a href="#projects">Projects</a> -->
-          <!-- <a href="./media.html">Media</a> -->
-          <a href="./contact.html">contact me</a>
-        </div>
-      </div>
-    </nav>
+  <a href="./index.html" class="icon-home" aria-label="Dean Guo home">
+    <i class="fa fa-tree" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </a>
 
-    <div id="herotext">
-      <div>
-        <h1 style="font-family: 
-          'Crimson Text', serif;"> Hi, I'm Dean. </h1>
-        <p>I aim to build things that are simple and delightful to use.</p>
-        <p>My <a href="./podgpt.html">latest side project</a> explores GenAI.</p>
-      </div>
+  <main>
+    <div class="stamp">
+      <p class="label">deanguo.com</p>
+      <h1>
+        <span>under</span>
+        <span>construction</span>
+      </h1>
     </div>
 
-  </section>
+    <p class="lede">
+      Rebuilding in public. <code>tbd</code> means still figuring it out.
+    </p>
 
-  <section id="projects" class="row">
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./podgpt.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>(Latest) PodGPT &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./kit.html"><img src="./img/kit.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Keep in Touch &ndash; React Native App </h2>
-      </div>
-    </div>
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./agentportal.html"><img src="./img/PodGPT.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Agent Portal</h2>
-      </div>
-    </div> -->
-    <!-- <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./entwine.html"><img src="./img/entwinehome_macbook.png" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Entwine &ndash; exploring new technologies</h2>
-      </div>
-    </div>
-    <div class="projects col-sm-12 col-md-6 col-xl-3">
-      <a href="./artshopper.html"><img src="./img/artshopper_thumb.jpg" class="img-responsive"></a>
-      <div class="overlay">
-        <h2>Art Shopper</h2>
-      </div>
-    </div> -->
-  </section>
-  </div>
-</div>
+    <section class="manifest" aria-label="Site sections being rebuilt">
+      <h2>// site map</h2>
+      <ul>
+        <li>
+          <span class="key">/now</span>
+          <span class="desc">what i'm working on right now</span>
+          <span class="status">tbd</span>
+        </li>
+        <li>
+          <span class="key">/projects</span>
+          <span class="desc">current builds, with proper write-ups</span>
+          <span class="status">tbd</span>
+        </li>
+        <li>
+          <span class="key">/notes</span>
+          <span class="desc">build logs &amp; product notes</span>
+          <span class="status">tbd</span>
+        </li>
+        <li>
+          <a href="./archive.html">
+            <span class="key">/older-work</span>
+            <span class="desc">past project pages, kept for context</span>
+            <span class="status live">live</span>
+          </a>
+        </li>
+        <li>
+          <a href="./contact.html">
+            <span class="key">/contact</span>
+            <span class="desc">say hi</span>
+            <span class="status live">live</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 
+  <footer>back soon</footer>
 
+  <div class="tape-bottom" aria-hidden="true"></div>
 
   <script src="js/three.js"></script>
   <script>
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // field of view, aspect ratio, near and far clipping panes
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.domElement.className = 'three-canvas';
+    renderer.domElement.setAttribute('aria-hidden', 'true');
     document.body.appendChild(renderer.domElement);
 
-    // Create a gradient texture for our box
     var canvas = document.createElement('canvas');
-    var context = canvas.getContext('2d');
-    canvas.width = 256;
-    canvas.height = 256;
-    var gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'aqua');
-    gradient.addColorStop(1, 'blue');
+    canvas.width = 256; canvas.height = 256;
+    var ctx = canvas.getContext('2d');
+    var grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grad.addColorStop(0, '#79fff2');
+    grad.addColorStop(0.52, '#6ba5ff');
+    grad.addColorStop(1, '#ffb86b');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw the gradient on the canvas
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Create a texture from the canvas
     var texture = new THREE.CanvasTexture(canvas);
-
-    // Create a material using the texture
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    var geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // x, y, z
-
-    var cube = new THREE.Mesh(geometry, material);
-    cube.position.y = -2
+    var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 0.55, transparent: true });
+    var cube = new THREE.Mesh(new THREE.BoxGeometry(1.7, 1.7, 1.7), material);
     scene.add(cube);
+    camera.position.z = 8;
 
-    camera.position.z = 9;
-
-    function getMousePos(event) {
-      var rect = renderer.domElement.getBoundingClientRect();
-      return {
-        x: ((event.clientX - rect.left) / (rect.right - rect.left)) * 2 - 1,
-        y: -((event.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1
-      };
+    function place() {
+      if (window.innerWidth < 700) {
+        cube.position.set(2.0, -3.4, 0);
+        cube.scale.setScalar(0.7);
+      } else {
+        cube.position.set(5.5, -2.4, 0);
+        cube.scale.setScalar(1);
+      }
     }
+    place();
+    window.addEventListener('resize', function () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      place();
+    });
 
-    function updateCubePosition(event) {
-      event.preventDefault();
-      var mousePos = getMousePos(event);
-      var vector = new THREE.Vector3(mousePos.x, mousePos.y, 0.5);
-      vector.unproject(camera);
-      var dir = vector.sub(camera.position).normalize();
-      var distance = -camera.position.z / dir.z;
-      var pos = camera.position.clone().add(dir.multiplyScalar(distance));
-      pos.multiplyScalar(0.8);
-      cube.position.copy(pos).negate();
-
-      // Calculate scale factor based on mouse position: further away = bigger cube
-      var scaleFactor = 1 + (Math.abs(mousePos.x) + Math.abs(mousePos.y)) * 0.3;
-
-      // Update cube scale
-      cube.scale.set(scaleFactor, scaleFactor, scaleFactor);
-      
-    }
-
-    window.addEventListener('mousemove', updateCubePosition, false);
-    window.addEventListener('touchmove', updateCubePosition, false);
-
-    function animate() {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // create a point light
-    const pointLight =
-      new THREE.PointLight('white', 1); // color, intensity, distance, decay
-
-    // set position and add to scene
-    pointLight.position.x = 10;
-    pointLight.position.y = 50;
-    pointLight.position.z = 130;
-    scene.add(pointLight);
-
-    var render = function () {
+    function render() {
       requestAnimationFrame(render);
-      cube.rotation.x += 0.0010;
-      cube.rotation.y += 0.015;
-      cube.rotation.z += 0.0005;
-      renderer.setClearColor('darkgrey', 1.0);
+      cube.rotation.x += 0.003;
+      cube.rotation.y += 0.012;
+      cube.rotation.z += 0.001;
+      renderer.setClearColor(0x0f1113, 0);
       renderer.render(scene, camera);
-    };
-
-
+    }
     render();
-
   </script>
 </body>
 
