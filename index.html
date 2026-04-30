@@ -283,18 +283,18 @@
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var texture = new THREE.CanvasTexture(canvas);
-    var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 0.55, transparent: true });
-    var cube = new THREE.Mesh(new THREE.BoxGeometry(1.7, 1.7, 1.7), material);
+    var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 0.42, transparent: true });
+    var cube = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.4, 1.4), material);
     scene.add(cube);
     camera.position.z = 8;
 
     function place() {
       if (window.innerWidth < 700) {
-        cube.position.set(2.0, -3.4, 0);
-        cube.scale.setScalar(0.7);
+        cube.position.set(-1.8, -3.6, 0);
+        cube.scale.setScalar(0.6);
       } else {
-        cube.position.set(5.5, -2.4, 0);
-        cube.scale.setScalar(1);
+        cube.position.set(-5.6, -2.6, 0);
+        cube.scale.setScalar(0.9);
       }
     }
     place();
