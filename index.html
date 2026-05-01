@@ -75,7 +75,7 @@
       height: 100vh;
       display: grid;
       align-content: center;
-      padding: 96px 56px 64px;
+      padding: 96px 56px 64px 140px;
       max-width: 1240px;
       margin: 0 auto;
     }
@@ -225,14 +225,19 @@
     scene.add(cube);
     camera.position.z = 8;
 
+    var cubeBiasX = 0;
+    var cubeBaseScale = 1;
     function place() {
       if (window.innerWidth < 820) {
+        cubeBiasX = 0;
+        cubeBaseScale = 1.1;
         cube.position.set(2.6, -3.6, 0);
-        cube.scale.setScalar(0.55);
       } else {
+        cubeBiasX = 4.6;
+        cubeBaseScale = 2.3;
         cube.position.set(5.5, -0.6, 0);
-        cube.scale.setScalar(1);
       }
+      cube.scale.setScalar(cubeBaseScale);
     }
     place();
 
@@ -252,9 +257,11 @@
       var dir = v.sub(camera.position).normalize();
       var distance = -camera.position.z / dir.z;
       var pos = camera.position.clone().add(dir.multiplyScalar(distance));
-      pos.multiplyScalar(0.55);
-      cube.position.copy(pos).negate();
-      var s = 0.85 + (Math.abs(pp.x) + Math.abs(pp.y)) * 0.18;
+      pos.multiplyScalar(0.35);
+      pos.negate();
+      pos.x += cubeBiasX;
+      cube.position.copy(pos);
+      var s = cubeBaseScale + (Math.abs(pp.x) + Math.abs(pp.y)) * 0.35;
       cube.scale.set(s, s, s);
     }
 
