@@ -32,15 +32,14 @@
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
     body {
       background: #101316;
       color: #f8f7f1;
       font-family: 'Raleway', sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .icon-home {
@@ -57,40 +56,52 @@
     .icon-home i { font-size: 18px; }
     .icon-home:hover { color: #9af8e9; }
 
+    .top-contact {
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      z-index: 4;
+      color: #d9dfd7;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .top-contact:hover { color: #9af8e9; }
+
     main {
       position: relative;
       z-index: 2;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 110px 28px 90px;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 80px 28px 80px;
+      text-align: center;
+    }
+
+    .stack-wrap {
+      width: 100%;
+      max-width: 720px;
     }
 
     .hero {
-      margin-bottom: 64px;
-      max-width: 720px;
+      margin-bottom: 44px;
     }
 
     h1.tbd {
       font-family: 'Crimson Text', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(140px, 26vw, 300px);
+      font-size: clamp(120px, 22vw, 240px);
       line-height: 0.85;
       letter-spacing: -0.03em;
-      margin-bottom: 22px;
-    }
-
-    .caption {
-      color: #9aa1a3;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      font-style: italic;
-      font-family: 'Crimson Text', serif;
     }
 
     .stack {
       list-style: none;
-      max-width: 600px;
+      margin: 0 auto;
+      max-width: 560px;
+      text-align: left;
       border-top: 1px solid rgba(248, 247, 241, 0.16);
     }
     .stack li {
@@ -98,8 +109,11 @@
       grid-template-columns: 130px 1fr auto;
       gap: 20px;
       align-items: baseline;
-      padding: 18px 0;
+      padding: 18px 4px;
       border-bottom: 1px solid rgba(248, 247, 241, 0.16);
+    }
+    .stack li.soon {
+      opacity: 0.42;
     }
     .stack .key {
       font-family: 'Crimson Text', serif;
@@ -114,33 +128,23 @@
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #6a706c;
+      color: #c8c0a4;
       white-space: nowrap;
+      border: 1px solid rgba(200, 192, 164, 0.35);
+      padding: 3px 8px;
+      border-radius: 2px;
     }
-    .stack .tag.live { color: #9af8e9; }
+    .stack .tag.live {
+      color: #9af8e9;
+      border-color: rgba(154, 248, 233, 0.45);
+    }
     .stack a {
       color: inherit; text-decoration: none;
       display: contents;
     }
     .stack a:hover .key { color: #9af8e9; }
-    .stack a:hover .tag { color: #9af8e9; }
+    .stack a:hover .tag { color: #9af8e9; border-color: #9af8e9; }
 
-    footer {
-      position: relative;
-      z-index: 2;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 28px 28px 40px;
-      color: #6a706c;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    footer a { color: #d9dfd7; text-decoration: none; }
-    footer a:hover { color: #9af8e9; }
 
     .three-canvas {
       position: fixed;
@@ -166,42 +170,35 @@
     <i class="fa fa-heart" aria-hidden="true"></i>
   </a>
 
+  <a href="./contact.html" class="top-contact">contact</a>
+
   <main>
+    <div class="stack-wrap">
     <div class="hero">
-      <h1 class="tbd">tbd</h1>
-      <p class="caption">currently rebuilding…</p>
+      <h1 class="tbd">brb</h1>
     </div>
 
     <ul class="stack" aria-label="Sections">
-      <li>
+      <li class="soon" aria-disabled="true">
         <span class="key">now</span>
-        <span class="desc">what I'm focused on this week</span>
+        <span class="desc">current projects</span>
         <span class="tag">coming soon</span>
       </li>
-      <li>
-        <span class="key">projects</span>
-        <span class="desc">current builds, written up properly</span>
-        <span class="tag">coming soon</span>
-      </li>
-      <li>
+      <li class="soon" aria-disabled="true">
         <span class="key">notes</span>
-        <span class="desc">build logs &amp; product thinking</span>
+        <span class="desc">writing about building</span>
         <span class="tag">coming soon</span>
       </li>
       <li>
         <a href="./archive.html">
           <span class="key">older work</span>
-          <span class="desc">past project pages, kept for context</span>
+          <span class="desc">earlier stuff</span>
           <span class="tag live">live →</span>
         </a>
       </li>
     </ul>
+    </div>
   </main>
-
-  <footer>
-    <span>back soon</span>
-    <a href="./contact.html">contact</a>
-  </footer>
 
   <script src="js/three.js"></script>
   <script>
@@ -233,8 +230,8 @@
 
     function place() {
       if (window.innerWidth < 700) {
-        cube.position.set(1.6, 2.6, 0);
-        cube.scale.setScalar(0.78);
+        cube.position.set(2.6, -3.8, 0);
+        cube.scale.setScalar(0.55);
       } else {
         cube.position.set(5.5, -0.6, 0);
         cube.scale.setScalar(1);
@@ -266,7 +263,6 @@
     }
 
     window.addEventListener('mousemove', move, false);
-    window.addEventListener('touchmove', move, { passive: false });
     window.addEventListener('resize', function () {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
