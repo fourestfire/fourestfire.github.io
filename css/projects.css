@@ -13,6 +13,20 @@ h1 {
   line-height: 0.9em;
 }
 
+.project-year {
+  display: inline-block;
+  margin-left: 8px;
+  color: #626a6d;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.35em;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  vertical-align: 0.15em;
+  white-space: nowrap;
+}
+
 h4 {
   font-size: 25px;
   padding-bottom: 7px;
