@@ -15,15 +15,15 @@ h1 {
 
 .project-year {
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 6px;
   color: #626a6d;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.35em;
+  font-size: 0.3em;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   line-height: 1;
-  vertical-align: 0.15em;
+  vertical-align: 0.22em;
   white-space: nowrap;
 }
 
